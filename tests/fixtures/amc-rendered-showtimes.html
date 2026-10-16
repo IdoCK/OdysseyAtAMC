@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+  <body>
+    <button type="button">Accept All</button>
+    <nav data-testid="date-picker" aria-label="Showtime dates">
+      <button type="button" data-date="2026-09-22">Tue Sep 22</button>
+      <button type="button" data-date="2026-09-23">Wed Sep 23</button>
+    </nav>
+
+    <section id="date-2026-09-22" class="date-panel">
+      <article data-testid="movie-card">
+        <h2>The Odyssey</h2>
+        <span>IMAX</span>
+        <span>Standard 70mm</span>
+        <p>
+          Separate movie-level format legends must never be combined or borrowed by an individual
+          showtime whose own explicit presentation is merely generic IMAX.
+        </p>
+
+        <div class="time-slot">
+          <a
+            href="https://www.amctheatres.com/showtimes/143822210"
+            data-format="IMAX"
+          >6:00 PM</a>
+          <span class="auditorium">Auditorium 1</span>
+        </div>
+
+        <div class="time-slot">
+          <a
+            href="https://www.amctheatres.com/showtimes/143822211"
+            data-format="The IMAX 70mm Experience"
+            data-datetime="2026-09-22T18:00:00-04:00"
+          >6:00 PM</a>
+          <span class="auditorium">Auditorium 2</span>
+        </div>
+
+        <div class="time-slot">
+          <button
+            type="button"
+            disabled
+            data-format="IMAX 70mm"
+            data-datetime="2026-09-22T21:00:00-04:00"
+          >9:00 PM</button>
+          <span class="auditorium">Auditorium 3</span>
+        </div>
+      </article>
+    </section>
+
+    <section id="date-2026-09-23" class="date-panel" hidden>
+      <article data-testid="movie-card">
+        <h2>Another Movie</h2>
+        <div class="time-slot">
+          <a
+            href="https://www.amctheatres.com/showtimes/143822299"
+            data-format="Dolby Cinema"
+          >7:15 PM</a>
+          <span class="auditorium">Auditorium 4</span>
+        </div>
+      </article>
+
+      <article data-testid="movie-card">
+        <h2>The Odyssey</h2>
+        <div>
+          <a
+            href="https://www.amctheatres.com/showtimes/143822300"
+            data-showtime="2026-09-23T20:30:00-04:00"
+          >8:30 PM</a>
+          <span class="format">The IMAX 70mm Experience</span>
+          <span class="auditorium">Auditorium 5</span>
+        </div>
+      </article>
+    </section>
+
+    <script>
+      for (const control of document.querySelectorAll("[data-date]")) {
+        control.addEventListener("click", () => {
+          for (const panel of document.querySelectorAll(".date-panel")) {
+            panel.hidden = panel.id !== `date-${control.dataset.date}`;
+          }
+        });
+      }
+    </script>
+  </body>
+</html>

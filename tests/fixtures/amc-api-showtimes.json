@@ -1,0 +1,126 @@
+{
+  "theatre": {
+    "id": 999,
+    "name": "AMC Lincoln Square 13",
+    "longName": "AMC Lincoln Square 13",
+    "slug": "amc-lincoln-square-13"
+  },
+  "pages": [
+    {
+      "pageSize": 4,
+      "pageNumber": 1,
+      "count": 7,
+      "_embedded": {
+        "showtimes": [
+          {
+            "id": 1001,
+            "movieName": "The Odyssey",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-09-22T22:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-22T22:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": false,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-09-22/lincoln-square/all/1001",
+            "auditorium": 1,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "The IMAX 70mm Experience", "description": "IMAX 70mm" }
+            ]
+          },
+          {
+            "id": 1002,
+            "movieName": "The Odyssey",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-09-22T23:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-22T23:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": false,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-09-22/lincoln-square/all/1002",
+            "auditorium": 2,
+            "attributes": [
+              { "code": "IMAX", "name": "IMAX", "description": "IMAX" },
+              { "code": "70MM", "name": "70mm", "description": "Standard 70mm" }
+            ]
+          },
+          {
+            "id": 1003,
+            "movieName": "",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-09-23T00:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-23T00:10:00Z",
+            "isSoldOut": true,
+            "isCanceled": false,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-09-22/lincoln-square/all/1003",
+            "auditorium": 3,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "IMAX 70mm", "description": "IMAX 70mm" }
+            ]
+          },
+          {
+            "id": 1004,
+            "movieName": "The Odyssey",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-09-23T01:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-23T01:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": false,
+            "auditorium": 4,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "IMAX 70mm", "description": "IMAX 70mm" }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "pageSize": 4,
+      "pageNumber": 2,
+      "count": 7,
+      "_embedded": {
+        "showtimes": [
+          {
+            "id": 1005,
+            "movieName": "The Odyssey",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-09-23T02:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-23T02:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": true,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-09-22/lincoln-square/all/1005",
+            "auditorium": 5,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "IMAX 70mm", "description": "IMAX 70mm" }
+            ]
+          },
+          {
+            "id": 1006,
+            "movieName": "The Odyssey",
+            "sortableMovieName": "Odyssey, The",
+            "showDateTimeUtc": "2026-08-01T02:00:00Z",
+            "sellUntilDateTimeUtc": "2026-08-01T02:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": false,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-08-01/lincoln-square/all/1006",
+            "auditorium": 6,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "IMAX 70mm", "description": "IMAX 70mm" }
+            ]
+          },
+          {
+            "id": 1007,
+            "movieName": "Another Movie",
+            "sortableMovieName": "Another Movie",
+            "showDateTimeUtc": "2026-09-23T03:00:00Z",
+            "sellUntilDateTimeUtc": "2026-09-23T03:10:00Z",
+            "isSoldOut": false,
+            "isCanceled": false,
+            "purchaseUrl": "https://www.amctheatres.com/showtimes/all/2026-09-22/lincoln-square/all/1007",
+            "auditorium": 7,
+            "attributes": [
+              { "code": "IMAX70MM", "name": "IMAX 70mm", "description": "IMAX 70mm" }
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

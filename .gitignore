@@ -1,0 +1,19 @@
+# Local Codex scratch files and user-facing copies
+/work/
+/outputs/
+/node_modules/
+.env.local
+/var/*.json
+/test-results/
+/playwright-report/
+
+# Private environment configuration, exports and state recovery files
+.env
+.env.*
+!.env.example
+/var/*.json.*
+/var/*.tmp
+*.pem
+*.key
+*.p12
+*.pfx

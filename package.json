@@ -1,0 +1,30 @@
+{
+  "name": "odyssey-at-amc",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "vitest run",
+    "test:integration": "vitest run tests/monitor.integration.test.ts",
+    "monitor": "tsx src/cli.ts",
+    "monitor:cloud": "tsx src/cloud-cli.ts",
+    "test:cloud": "vitest run tests/telegram.test.ts tests/cloud-run.test.ts tests/cloud-cli.test.ts",
+    "inspect:amc": "tsx scripts/inspect-amc.ts",
+    "inspect:amc-api": "tsx scripts/inspect-amc-api.ts"
+  },
+  "dependencies": {
+    "playwright": "^1.55.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.20.0",
+    "typescript": "^5.9.0",
+    "vitest": "^3.2.0",
+    "yaml": "^2.8.3"
+  }
+}

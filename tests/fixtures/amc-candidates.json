@@ -1,0 +1,16 @@
+[
+  {
+    "movieText": "The Odyssey",
+    "formatText": "The IMAX 70mm Experience",
+    "dateTime": "2026-09-22T18:00:00-04:00",
+    "href": "/showtimes/143822211",
+    "disabled": false
+  },
+  {
+    "movieText": "The Odyssey",
+    "formatText": "IMAX with Laser",
+    "dateTime": "2026-09-22T21:00:00-04:00",
+    "href": "/showtimes/143822212",
+    "disabled": false
+  }
+]

@@ -1,0 +1,61 @@
+name: Monitor AMC IMAX 70mm
+
+on:
+  workflow_dispatch:
+    inputs:
+      telegram_test_only:
+        description: Send a Telegram test message without persisting monitor state
+        required: false
+        default: false
+        type: boolean
+      daily_status_test_only:
+        description: Send the silent daily status without fetching AMC or persisting state
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: odyssey-imax-70mm-monitor
+  cancel-in-progress: false
+
+jobs:
+  monitor:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - run: npm ci
+
+      - name: Restore monitor state
+        uses: actions/cache/restore@v4
+        with:
+          path: var/state.json
+          key: odyssey-state-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: odyssey-state-
+
+      - name: Run monitor
+        run: npm run --silent monitor:cloud
+        env:
+          AMC_API_KEY: ${{ secrets.AMC_API_KEY }}
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+          GITHUB_EVENT_NAME: ${{ github.event_name }}
+          TELEGRAM_TEST_ONLY: ${{ inputs.telegram_test_only || 'false' }}
+          DAILY_STATUS_TEST_ONLY: ${{ inputs.daily_status_test_only || 'false' }}
+          DAILY_STATUS_ONLY: ${{ github.event.schedule == '2 22 * * *' }}
+
+      - name: Save monitor state
+        if: ${{ hashFiles('var/state.json') != '' && !inputs.telegram_test_only && !inputs.daily_status_test_only }}
+        uses: actions/cache/save@v4
+        with:
+          path: var/state.json
+          key: odyssey-state-${{ github.run_id }}-${{ github.run_attempt }}
